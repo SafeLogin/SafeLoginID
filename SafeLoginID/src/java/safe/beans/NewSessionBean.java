@@ -9,6 +9,7 @@ package safe.beans;
 import static aproc.crud.AprocLogMethods.ListUsuarios;
 import aproc.map.Uztuser;
 import java.util.ArrayList;
+import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 
@@ -17,7 +18,7 @@ import javax.ejb.LocalBean;
  * @author Ely Paguay
  */
 @Stateless
-@LocalBean
+
 public class NewSessionBean {
 
     // Add business logic below. (Right-click in editor and choose
@@ -31,3 +32,4 @@ public class NewSessionBean {
         return "Prueba EJB";        
     }
 }
+
