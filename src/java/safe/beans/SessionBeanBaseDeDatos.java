@@ -8,6 +8,7 @@ package safe.beans;
 
 import aproc.crud.AprocLogMethods;
 import aproc.map.Uztuser;
+import flexjson.JSONSerializer;
 import java.util.ArrayList;
 import javax.ejb.Stateless;
 
@@ -19,11 +20,17 @@ import javax.ejb.Stateless;
 @Stateless
 public class SessionBeanBaseDeDatos implements InterfaceBaseDeDatos{
 
+    public String toJson(ArrayList prueba)
+    {
+        JSONSerializer json= new JSONSerializer();
+        return json.serialize(prueba);
+    }
+    
     @Override
     public String LlamadoBaseAprocLog() {
        AprocLogMethods met= new AprocLogMethods();
         ArrayList<Uztuser> usuarios = met.ListUsuarios();
-        String prueba= usuarios.get(0).getUztuserNombres();
+        String prueba= toJson(usuarios);
         return prueba; 
     }
 
