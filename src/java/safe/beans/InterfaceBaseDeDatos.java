@@ -6,6 +6,8 @@
 
 package safe.beans;
 
+import aproc.map.Uztuser;
+import java.util.ArrayList;
 import javax.ejb.Remote;
 
 /**
@@ -15,5 +17,6 @@ import javax.ejb.Remote;
 @Remote
 public interface InterfaceBaseDeDatos {
     public String LlamadoBaseAprocLog();
+    public boolean insertarUsuario();
     
 }
